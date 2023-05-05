@@ -1,0 +1,171 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Ubicacion/ArtWork.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Ubicacion/UbiBase.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Ubicacion.gd" type="Script" id=3]
+[ext_resource path="res://Scene/Card.tscn" type="PackedScene" id=4]
+
+[node name="Ubicacion" type="Control" groups=["locations"]]
+anchor_left = 0.02
+anchor_right = 0.18
+anchor_bottom = 1.0
+margin_left = 22.4
+margin_top = 217.0
+margin_right = -1.40001
+margin_bottom = -304.0
+grow_horizontal = 2
+rect_scale = Vector2( 0.8, 0.8 )
+script = ExtResource( 3 )
+
+[node name="Artwork" type="TextureRect" parent="."]
+margin_left = -1.0
+margin_top = -2.5
+margin_right = 1272.0
+margin_bottom = 1672.5
+rect_scale = Vector2( 0.15, 0.12 )
+texture = ExtResource( 1 )
+stretch_mode = 1
+
+[node name="EnemyPowerRect" type="ColorRect" parent="."]
+margin_left = 132.0
+margin_top = 28.5
+margin_right = 161.0
+margin_bottom = 58.5
+rect_rotation = -44.4
+rect_pivot_offset = Vector2( -36.3569, 72.2046 )
+color = Color( 0.498039, 0.486275, 0.486275, 1 )
+
+[node name="EnemyPower" type="Label" parent="EnemyPowerRect"]
+margin_left = 14.1504
+margin_top = -4.58835
+margin_right = 42.1504
+margin_bottom = 23.4117
+rect_rotation = 44.4
+text = "1"
+align = 1
+valign = 1
+
+[node name="PlayerPowerRect" type="ColorRect" parent="."]
+margin_left = 133.0
+margin_top = 181.5
+margin_right = 162.0
+margin_bottom = 211.5
+rect_rotation = -44.4
+rect_pivot_offset = Vector2( -36.3569, 72.2046 )
+color = Color( 0.498039, 0.486275, 0.486275, 1 )
+
+[node name="PlayerPower" type="Label" parent="PlayerPowerRect"]
+margin_left = 13.0
+margin_top = -4.588
+margin_right = 41.0
+margin_bottom = 23.412
+rect_rotation = 44.4
+text = "1"
+align = 1
+valign = 1
+
+[node name="UbiBase" type="TextureRect" parent="."]
+margin_left = -10.0
+margin_top = -2.5
+margin_right = 1014.0
+margin_bottom = 1021.5
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 3
+
+[node name="UbiName" type="Label" parent="."]
+margin_left = 26.25
+margin_top = 52.5
+margin_right = 160.25
+margin_bottom = 66.5
+text = "Colina del Trueno"
+align = 1
+
+[node name="HabDesc" type="Label" parent="."]
+margin_left = 26.0
+margin_top = 73.5
+margin_right = 161.0
+margin_bottom = 145.5
+text = "Todas las cartas con poder 3 o menos ganan +1 de poder."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="EnemyCardZone" type="Control" parent="."]
+margin_top = -247.5
+margin_right = 197.0
+margin_bottom = 5.5
+
+[node name="Card" parent="EnemyCardZone" instance=ExtResource( 4 )]
+margin_left = 0.0
+margin_top = -10.0
+margin_right = -8.0
+margin_bottom = -15.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Card2" parent="EnemyCardZone" instance=ExtResource( 4 )]
+margin_left = 90.0
+margin_top = -10.0
+margin_right = 75.0
+margin_bottom = -10.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Name" parent="EnemyCardZone/Card2" index="2"]
+margin_left = 14.5
+margin_top = 8.0
+margin_right = 186.5
+margin_bottom = 263.0
+
+[node name="Description" parent="EnemyCardZone/Card2" index="5"]
+margin_top = 36.0
+margin_right = 177.0
+
+[node name="Card3" parent="EnemyCardZone" instance=ExtResource( 4 )]
+margin_left = 0.0
+margin_top = 120.0
+margin_right = -13.0
+margin_bottom = 120.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Card4" parent="EnemyCardZone" instance=ExtResource( 4 )]
+margin_left = 90.0
+margin_top = 120.0
+margin_right = 75.0
+margin_bottom = 132.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="PlayerCardZone" type="Control" parent="."]
+margin_left = -15.0
+margin_top = 160.0
+margin_right = 237.0
+margin_bottom = 482.0
+
+[node name="card_slot" type="Control" parent="PlayerCardZone"]
+margin_left = -5.0
+margin_top = -5.0
+margin_right = 83.0
+margin_bottom = 111.0
+
+[node name="card_slot2" type="Control" parent="PlayerCardZone"]
+margin_left = 105.0
+margin_top = -5.0
+margin_right = 193.0
+margin_bottom = 111.0
+
+[node name="card_slot3" type="Control" parent="PlayerCardZone"]
+margin_left = -5.0
+margin_top = 140.0
+margin_right = 83.0
+margin_bottom = 256.0
+
+[node name="card_slot4" type="Control" parent="PlayerCardZone"]
+margin_left = 105.0
+margin_top = 140.0
+margin_right = 193.0
+margin_bottom = 256.0
+
+[connection signal="gui_input" from="PlayerCardZone/card_slot" to="." method="_on_card_slot_gui_input"]
+
+[editable path="EnemyCardZone/Card"]
+[editable path="EnemyCardZone/Card2"]

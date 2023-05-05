@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/UbicacionTemplate.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Ubicacion/ArtWork.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Ubicacion/UbiBase.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/UbiHabs/DominoDelCielo.gd" type="Script" id=4]
+
+[resource]
+script = ExtResource( 1 )
+ubiBase = ExtResource( 3 )
+artwork = ExtResource( 2 )
+ubiName = "Colina del Trueno"
+enemyPowerRect = Color( 0.643137, 0.631373, 0.631373, 1 )
+enemyPower = "0"
+playerPowerRect = Color( 0.643137, 0.631373, 0.631373, 1 )
+playerPower = "0"
+habDesct = "Todas las cartas con poder 3 o menos ganan +1 de poder."
+habilidad = ExtResource( 4 )

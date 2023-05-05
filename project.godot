@@ -1,0 +1,80 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "Card",
+"language": "GDScript",
+"path": "res://Scripts/card.gd"
+}, {
+"base": "Resource",
+"class": "CardTemplate",
+"language": "GDScript",
+"path": "res://Scripts/CardTemplate.gd"
+}, {
+"base": "Node",
+"class": "DominoDelCielo",
+"language": "GDScript",
+"path": "res://Scripts/UbiHabs/DominoDelCielo.gd"
+}, {
+"base": "Node",
+"class": "FuriaVikinga",
+"language": "GDScript",
+"path": "res://Scripts/FuriaVikinga.gd"
+}, {
+"base": "Node",
+"class": "Ubicacion",
+"language": "GDScript",
+"path": "res://Scripts/Ubicacion.gd"
+}, {
+"base": "Resource",
+"class": "UbicacionTemplate",
+"language": "GDScript",
+"path": "res://Scripts/UbicacionTemplate.gd"
+}, {
+"base": "Control",
+"class": "UiInfo",
+"language": "GDScript",
+"path": "res://Scripts/UiInfo.gd"
+} ]
+_global_script_class_icons={
+"Card": "",
+"CardTemplate": "",
+"DominoDelCielo": "",
+"FuriaVikinga": "",
+"Ubicacion": "",
+"UbicacionTemplate": "",
+"UiInfo": ""
+}
+
+[application]
+
+config/name="CardGameDefinitive"
+run/main_scene="res://Scene/sceneP.tscn"
+config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1280
+window/size/height=720
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

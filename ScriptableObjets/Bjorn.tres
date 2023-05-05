@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Card/CardBase.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Card/Artwork-bjorn.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/CardTemplate.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/FuriaVikinga.gd" type="Script" id=4]
+
+[resource]
+script = ExtResource( 3 )
+artwork = ExtResource( 2 )
+cardBase = ExtResource( 1 )
+name = "Bjorn El Imparable"
+energy = 2
+attack = 4
+description = "Guerrero valiente y decidido."
+habilidad = ExtResource( 4 )
+habDescri = "Aumenta su poder en 2"

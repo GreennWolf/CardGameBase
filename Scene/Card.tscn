@@ -1,0 +1,91 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Fonts/VIKING-N.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Card/CardBase.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=3]
+size = 10
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 15
+outline_size = 2
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 8
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="Card" type="Control" groups=["cards"]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 45.0
+margin_right = -1081.0
+margin_bottom = -404.0
+
+[node name="Artwork" type="TextureRect" parent="."]
+margin_left = 21.0
+margin_top = 21.0
+margin_right = 1045.0
+margin_bottom = 1045.0
+rect_scale = Vector2( 0.15, 0.15 )
+
+[node name="CardBase" type="TextureRect" parent="."]
+margin_left = 7.0
+margin_top = 14.0
+margin_right = 596.0
+margin_bottom = 842.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 3 )
+
+[node name="Name" type="Label" parent="."]
+margin_left = 49.0
+margin_top = 138.0
+margin_right = 142.0
+margin_bottom = 161.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+autowrap = true
+
+[node name="Power" type="Label" parent="."]
+margin_left = 17.0
+margin_top = 139.0
+margin_right = 38.0
+margin_bottom = 160.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+align = 1
+valign = 1
+
+[node name="Energy" type="Label" parent="."]
+margin_left = 153.0
+margin_top = 133.0
+margin_right = 174.0
+margin_bottom = 159.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+align = 1
+valign = 1
+
+[node name="Description" type="Label" parent="."]
+margin_left = 106.0
+margin_top = 166.0
+margin_right = 166.0
+margin_bottom = 214.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+autowrap = true
+
+[node name="Habilidad" type="Label" parent="."]
+margin_left = 28.0
+margin_top = 165.0
+margin_right = 90.0
+margin_bottom = 213.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+autowrap = true

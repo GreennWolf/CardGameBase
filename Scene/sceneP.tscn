@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scene/Mano.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scene/Ubicacion.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/GameManager.gd" type="Script" id=3]
+[ext_resource path="res://Scene/UiInfo.tscn" type="PackedScene" id=4]
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Ubicacion" parent="." instance=ExtResource( 2 )]
+margin_left = 120.0
+margin_top = 268.0
+margin_right = 309.0
+margin_bottom = 462.0
+
+[node name="Ubicacion2" parent="." instance=ExtResource( 2 )]
+margin_left = 567.0
+margin_top = 265.0
+margin_right = 756.0
+margin_bottom = 459.0
+
+[node name="Ubicacion3" parent="." instance=ExtResource( 2 )]
+margin_left = 964.0
+margin_top = 271.0
+margin_right = 1153.0
+margin_bottom = 465.0
+
+[node name="Mano" parent="." instance=ExtResource( 1 )]
+margin_left = 282.0
+margin_top = 783.0
+margin_right = 900.0
+margin_bottom = 908.0
+rect_scale = Vector2( 1.2, 1.2 )
+
+[node name="Card" parent="Mano" index="0"]
+margin_left = -13.75
+margin_top = -32.5
+margin_right = -443.75
+
+[node name="Card2" parent="Mano" index="1"]
+margin_top = -37.875
+margin_right = -339.0
+
+[node name="Card3" parent="Mano" index="2"]
+margin_left = 191.25
+margin_top = -33.75
+margin_right = -240.75
+margin_bottom = 135.75
+
+[node name="Card4" parent="Mano" index="3"]
+margin_left = 290.0
+margin_top = -32.5
+margin_right = -148.0
+margin_bottom = 122.0
+
+[node name="Card5" parent="Mano" index="4"]
+margin_left = 385.0
+margin_top = -32.5
+margin_right = -49.0001
+
+[node name="Card6" parent="Mano" index="5"]
+margin_left = 478.75
+margin_top = -32.5
+margin_right = 51.75
+
+[node name="UiInfo" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[editable path="Mano"]

@@ -1,0 +1,107 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scene/Card.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/card.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/UiInfo.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Ubicacion.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Ubicacion/UbiBase.png" type="Texture" id=5]
+
+[node name="UiInfo" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="Close" type="ColorRect" parent="."]
+margin_right = 1282.0
+margin_bottom = 724.0
+color = Color( 0.294118, 0.278431, 0.278431, 0 )
+
+[node name="Card" parent="." instance=ExtResource( 1 )]
+margin_left = 527.0
+margin_top = 106.0
+margin_right = -562.0
+margin_bottom = -317.0
+rect_scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 2 )
+
+[node name="Ubi" type="Control" parent="."]
+margin_left = 467.0
+margin_top = 88.0
+margin_right = 671.0
+margin_bottom = 318.0
+rect_scale = Vector2( 2, 2 )
+script = ExtResource( 4 )
+
+[node name="Artwork" type="TextureRect" parent="Ubi"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 1281.0
+margin_bottom = 1683.0
+rect_scale = Vector2( 0.15, 0.12 )
+stretch_mode = 1
+
+[node name="EnemyPowerRect" type="ColorRect" parent="Ubi"]
+margin_left = 141.0
+margin_top = 39.0
+margin_right = 170.0
+margin_bottom = 69.0
+rect_rotation = -44.4
+rect_pivot_offset = Vector2( -36.3569, 72.2046 )
+color = Color( 0.498039, 0.486275, 0.486275, 1 )
+
+[node name="EnemyPower" type="Label" parent="Ubi/EnemyPowerRect"]
+margin_left = 14.1504
+margin_top = -4.58835
+margin_right = 42.1504
+margin_bottom = 23.4117
+rect_rotation = 44.4
+text = "0"
+align = 1
+valign = 1
+
+[node name="PlayerPowerRect" type="ColorRect" parent="Ubi"]
+margin_left = 142.0
+margin_top = 192.0
+margin_right = 171.0
+margin_bottom = 222.0
+rect_rotation = -44.4
+rect_pivot_offset = Vector2( -36.3569, 72.2046 )
+color = Color( 0.498039, 0.486275, 0.486275, 1 )
+
+[node name="PlayerPower" type="Label" parent="Ubi/PlayerPowerRect"]
+margin_left = 13.0
+margin_top = -4.588
+margin_right = 41.0
+margin_bottom = 23.412
+rect_rotation = 44.4
+text = "0"
+align = 1
+valign = 1
+
+[node name="UbiBase" type="TextureRect" parent="Ubi"]
+margin_left = -1.0
+margin_top = 8.00006
+margin_right = 1023.0
+margin_bottom = 1032.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 3
+
+[node name="UbiName" type="Label" parent="Ubi"]
+margin_left = 35.25
+margin_top = 63.0
+margin_right = 169.25
+margin_bottom = 77.0
+align = 1
+
+[node name="HabDesc" type="Label" parent="Ubi"]
+margin_left = 35.0
+margin_top = 84.0
+margin_right = 170.0
+margin_bottom = 156.0
+align = 1
+valign = 1
+autowrap = true
+
+[connection signal="gui_input" from="Close" to="." method="_on_Close_gui_input"]
